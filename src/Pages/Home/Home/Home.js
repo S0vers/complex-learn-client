@@ -25,8 +25,8 @@ const Home = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3>Programming First</h3>
+                    <p>Our courses are programming first </p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item className='Carousel'>
@@ -37,9 +37,9 @@ const Home = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Third slide label</h3>
+                    <h3>Programme everyday</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Create the practice of programming everyday.
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -51,9 +51,9 @@ const Home = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Third slide label</h3>
+                    <h3>Code Like Pro</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Learn to write programme like a professional
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>
