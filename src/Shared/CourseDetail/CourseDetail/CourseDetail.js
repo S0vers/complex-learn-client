@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaRegEye, FaStar, FaFilePdf } from 'react-icons/fa';
+import { useReactToPrint } from 'react-to-print';
+import toast from 'react-hot-toast';
 const CourseDetail = () => {
     const details = useLoaderData();
-    console.log(details)
     const { course_id, Rating, detail, picture, time, title, totalview } = details[0]
-    console.log(course_id, Rating, detail, picture, time, title, totalview);
-
+    const componentRef = useRef();
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+        documentTitle: `Content Details ${course_id}`,
+        onAfterPrint: () => toast.success('Print successful')
+    })
     return (
         <div className='mt-4 col d-flex justify-content-center'>
-            <Card className='' style={{ width: '64rem' }}>
+            <Card ref={componentRef} className='' style={{ width: '64rem' }}>
                 <Card.Img style={{ height: '20rem' }} variant="top" src={picture} />
                 <Card.Body>
                     <Card.Header className='d-flex justify-content-between align-items-center'>
@@ -21,7 +26,7 @@ const CourseDetail = () => {
                             </div>
                         </div>
                         <div>
-                            <FaFilePdf className='me-2'></FaFilePdf>
+                            <FaFilePdf onClick={handlePrint} className='me-2'></FaFilePdf>
                         </div>
                     </Card.Header>
                     <div className="d-flex justify-content-between mb-4">
