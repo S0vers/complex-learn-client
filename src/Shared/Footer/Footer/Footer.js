@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaInstagram, FaTwitch, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaCopyright, FaFacebook, FaInstagram, FaTwitch, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/companyLogo/Logo.png'
 const Footer = () => {
@@ -31,6 +31,9 @@ const Footer = () => {
                                 <FaInstagram></FaInstagram>
                             </li>
                         </ul>
+                        <div className='container'>
+                            <p className='text-center'><small><FaCopyright></FaCopyright> Copyright 2022</small></p>
+                        </div>
                     </nav>
                 </div>
             </footer>
