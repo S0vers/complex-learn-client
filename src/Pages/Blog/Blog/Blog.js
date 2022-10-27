@@ -14,19 +14,28 @@ const Blog = () => {
                 <Accordion.Item eventKey="1">
                     <Accordion.Header>Why are you using firebase? What other options do you have to implement authentication?</Accordion.Header>
                     <Accordion.Body>
-                        We use firebase to build and deploy application. But the biggest power firebase has is the authentication service. using firebase authentication and authorization we can easily implement a register and login functionality. We can also verify and authenticate the legitimacy of the user and also let them easily sign in through already existing third party options like google, facebook, twitter and github.
+                        We use firebase to build and deploy application. But the biggest power firebase has is the authentication service. using firebase authentication and authorization we can easily implement a register and login functionality. We can also verify and authenticate the legitimacy of the user and also let them easily sign in through already existing third party options like google, facebook, twitter and github. It also generates unique UID which makes it easy to set access control for the users.
+                        It also remember the session so when the user comes back they stay logged in and they can continue their session.<br></br>
+                        For authentication there are many other services. Like,
+                        <ul>
+                            <li>Autho</li>
+                            <li>MongoDB</li>
+                            <li>Amazon Cognito</li>
+                            <li>AWS Amplify</li>
+                        </ul>
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="3">
                     <Accordion.Header>How does the private route work?</Accordion.Header>
                     <Accordion.Body>
-                        No you will never lose access to your purchase unless there is a global network outage. In our mobile app we also have download feature.
+                        To create a private route first we must create a privater route file that will check if the user is authenticated or logged in or not. If not they will be redirected to a set directory and prompted to authenticate. If they are logged in the the private route will let the user go to its child component which is the private directory.
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="4">
                     <Accordion.Header>What is Node? How does Node work?</Accordion.Header>
                     <Accordion.Body>
-                        We are a small team working tirelessly to provide new courses and new content to the existing courses. You purchase is not just a one time deal. The purchase guarantees that you will get service from us for years.
+                        Node js is open source cross platform runtime environment that let's us run javascript outside of the web browser. It is mostly used to create backend applications.  <br />
+                        Since Node is built on jacascript it is an asynchronously meaning that the it using a single that it can serve multiple clients.When a client makes a request the thread take the request and while the dataset is being created the thred moves on to serve the next request insted of waiting for the dataset making to be complete. It has a event queue where the completed data lies and as soon as the thread is free it checks the event queue and serves the data to the client.
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
