@@ -10,7 +10,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 const Login = () => {
     const [error, setError] = useState('');
-    const { providerLogin, signIn, setloading, verifyEmail } = useContext(AuthContext);
+    const { providerLogin, signIn, setloading } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
@@ -20,21 +20,15 @@ const Login = () => {
         providerLogin(googleProvider)
             .then(result => {
                 console.log(result.user)
-                handleEmailVerification();
-
+                navigate(from, { replace: true })
             })
             .catch(error => setError(error.message))
-    }
-    const handleEmailVerification = () => {
-        verifyEmail()
-            .then(() => { })
-            .catch(e => console.error(e))
     }
     const handleGithubSignIn = () => {
         providerLogin(gitHubProvider)
             .then(result => {
                 console.log(result.user)
-
+                navigate(from, { replace: true })
             })
             .catch(error => setError(error.message))
     }
@@ -50,12 +44,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
-                if (user.emailVerified) {
-                    navigate(from, { replace: true })
-                }
-                else {
-                    toast.error('Your Email is not verified. Please verify.')
-                }
+                navigate(from, { replace: true })
             })
             .catch(e => {
                 setError(e.message);

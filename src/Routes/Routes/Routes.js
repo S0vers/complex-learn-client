@@ -9,6 +9,7 @@ import Login from "../../Pages/Login/login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import CourseDetail from "../../Shared/CourseDetail/CourseDetail/CourseDetail";
 import Notfound from "../../Shared/NotFound/NotFound/Notfound";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 export const routes = createBrowserRouter([
@@ -32,7 +33,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                element: <Checkout></Checkout>,
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://complex-edu-server.vercel.app/courseDetails/${params.id}`)
             },
             {

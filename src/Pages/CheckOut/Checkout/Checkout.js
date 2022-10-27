@@ -27,6 +27,7 @@ const Checkout = () => {
                         <>
                             {summary}
                         </>
+                        <p className='mt-4'>Price:$199</p>
                     </Card.Text>
                     <Button onClick={handleCourseBuy} style={{ textDecoration: 'none', backgroundColor: '#5bbcfc', border: 'none' }} hover='' variant="primary">Buy the course.</Button>
                 </Card.Body>
