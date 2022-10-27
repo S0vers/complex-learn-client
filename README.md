@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Project Complex Learn
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project on [Complex Learn](https://practice-complex-edu.web.app/).
 
-## Available Scripts
+## Information about the Project
 
-In the project directory, you can run:
+- This project is an online learning platform that teaches various programming language.
+- When you enter the website you will be greeted with a home page with a Carousel.
+- There will also a Nav bar that has the Company Logo, name, Home, FAQ, Blog.
+- On the other side there is either login, register or logout depending if the user is logged in on not.
+- In the FAQ section there are some fundamental question and answer about the company.
+- In the Blog section we have given all the answers to the assignments bonus answer.
+- In the Course section there are two parts the left bar and the course cards if the user presses any of the buttons they are sent to the course details section.
+- In the course detail section there are are some more information about the course and a get premium access button and a printPDF in the header next to the title.
+- If the printPDF icon is pressed a pdf will be prompted to be printed or downloaded by the user.
+- If user press get premium access they are taken to private route if they are not logged in they are prompted to log in and after logging in they are sent back to the private page.
+- In the Private page they can buy the Course.
 
-### `npm start`
+That's the full functionality of the website.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology used in the project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The application is built using React.
+- To design the website React-bootstrap is used.
+- For the icons react-icons are used.
+- For authentication and hosting Firebase is used.
+- For routing the website react-router0dom is used.
+- react-to-print is used for the printing procedure.

@@ -19,7 +19,6 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
             .then(result => {
-                console.log(result.user)
                 navigate(from, { replace: true })
             })
             .catch(error => setError(error.message))
@@ -27,7 +26,6 @@ const Login = () => {
     const handleGithubSignIn = () => {
         providerLogin(gitHubProvider)
             .then(result => {
-                console.log(result.user)
                 navigate(from, { replace: true })
             })
             .catch(error => setError(error.message))
@@ -37,11 +35,9 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(password, email)
         signIn(email, password)
             .then(result => {
                 const user = result.user
-                console.log(user);
                 form.reset();
                 setError('');
                 navigate(from, { replace: true })
