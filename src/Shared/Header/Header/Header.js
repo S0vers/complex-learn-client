@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
@@ -7,10 +7,15 @@ import Nav from 'react-bootstrap/Nav';
 import { FaUser } from 'react-icons/fa';
 import Form from 'react-bootstrap/Form';
 import './Header.css';
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logout } = useContext(AuthContext);
+    console.log(user?.uid)
     const handleLogOut = () => {
-        console.log('clicked')
+        logout()
+            .then(() => { })
+            .catch(error => console.error(error))
     }
     return (
         <>
@@ -45,10 +50,17 @@ const Header = () => {
                                     label=""
                                 />
                             </Form>
-                            <Link className='mx-2 my-2 linkFixer' to='/login'>Login</Link>
-                            <Link className='mx-2 my-2 linkFixer' to='/register'>Register</Link>
-                            <p className='mx-2 my-2 linkFixer hoverP' onClick={handleLogOut} >Logout</p>
-                            <Link className='mx-2 my-2 linkFixer' to='/'>
+                            {
+                                user?.uid ?
+                                    <p className='mx-2 my-2 linkFixer hoverP' onClick={handleLogOut} >Logout</p>
+                                    :
+                                    <>
+                                        <Link className='mx-2 my-2 linkFixer' to='/login'>Login</Link>
+                                        <Link className='mx-2 my-2 linkFixer' to='/register'>Register</Link>
+                                    </>
+
+                            }
+                            <Link className='mx-2 my-2 linkFixer' to='/' data-toggle="tooltip" data-placement="bottom" title="User Name">
                                 <FaUser></FaUser>
                             </Link>
                         </Nav>
