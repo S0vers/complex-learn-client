@@ -4,9 +4,14 @@ import Card from 'react-bootstrap/Card';
 import { FaStar } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import Notfound from '../../../Shared/NotFound/NotFound/Notfound';
 const Checkout = () => {
     const details = useLoaderData();
-    const { Rating, summary, picture, title } = details[0]
+    if (!details[0]) {
+        return <Notfound></Notfound>;
+    }
+    const { Rating, summary, picture, title } = details[0];
+
     const handleCourseBuy = () => {
         toast.success('Course Bought successfully.')
     }

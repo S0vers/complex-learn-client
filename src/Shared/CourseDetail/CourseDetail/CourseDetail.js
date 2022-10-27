@@ -4,10 +4,16 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaRegEye, FaStar, FaFilePdf } from 'react-icons/fa';
 import ReactPrint from 'react-to-print';
+import Notfound from '../../NotFound/NotFound/Notfound';
 const CourseDetail = () => {
+
     const details = useLoaderData();
-    const { course_id, Rating, detail, picture, time, title, totalview } = details[0]
     const ref = useRef();
+    if (!details[0]) {
+        return <Notfound></Notfound>;
+    }
+    const { course_id, Rating, detail, picture, time, title, totalview } = details[0]
+
     return (
         <div className='mt-4 col d-flex justify-content-center'>
             <Card className='' style={{ width: '64rem' }}>

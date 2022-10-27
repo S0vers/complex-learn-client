@@ -51,8 +51,8 @@ const Register = () => {
                 <Card.Body>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group className="mb-3" controlId="formBasicName">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control name='name' type="text" placeholder="Your Name" />
+                            <Form.Label>Full name</Form.Label>
+                            <Form.Control name='name' type="text" placeholder="Full name" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicPhoto">
                             <Form.Label>PhotoURL</Form.Label>
