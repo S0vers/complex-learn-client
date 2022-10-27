@@ -1,0 +1,11 @@
+.linkFixer{
+    text-decoration: none;
+    color: #485c6b;
+    font-size: 1.15rem;
+}
+.linkFixer:hover{
+    color: white;
+}
+.hoverP:hover{
+    cursor: pointer
+}
