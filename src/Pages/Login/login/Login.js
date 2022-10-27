@@ -10,7 +10,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 const Login = () => {
     const [error, setError] = useState('');
-    const { providerLogin, signIn, setloading } = useContext(AuthContext);
+    const { providerLogin, signIn, setloading, verifyEmail } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
@@ -20,9 +20,15 @@ const Login = () => {
         providerLogin(googleProvider)
             .then(result => {
                 console.log(result.user)
+                handleEmailVerification();
 
             })
             .catch(error => setError(error.message))
+    }
+    const handleEmailVerification = () => {
+        verifyEmail()
+            .then(() => { })
+            .catch(e => console.error(e))
     }
     const handleGithubSignIn = () => {
         providerLogin(gitHubProvider)
