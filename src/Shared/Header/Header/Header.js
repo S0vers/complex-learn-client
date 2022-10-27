@@ -11,7 +11,6 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext);
-    console.log(user?.uid)
     const handleLogOut = () => {
         logout()
             .then(() => { })
@@ -60,8 +59,19 @@ const Header = () => {
                                     </>
 
                             }
-                            <Link className='mx-2 my-2 linkFixer' to='/' data-toggle="tooltip" data-placement="bottom" title="User Name">
-                                <FaUser></FaUser>
+                            <Link className='mx-2 my-2 linkFixer' to='/' data-toggle="tooltip" data-placement="bottom" title={user?.displayName}>
+                                {
+                                    user?.photoURL ?
+                                        <img
+                                            alt=""
+                                            src={user.photoURL}
+                                            width="30"
+                                            height="30"
+                                            className="d-inline-block align-top"
+                                        />
+                                        :
+                                        <FaUser></FaUser>
+                                }
                             </Link>
                         </Nav>
                     </Navbar.Collapse>
